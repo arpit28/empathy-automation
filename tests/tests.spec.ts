@@ -47,7 +47,7 @@ test('E2E client registration happy path + validations', async ({ page }) => {
     txt3: goodData.txt3
   });
 
-  await page.pause();
+  //await page.pause();
   // --- PAGE 4: OPTIONS PAGE ---
   const opt = new OptionsPage(page);
 
