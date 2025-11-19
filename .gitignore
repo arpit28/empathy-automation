@@ -1,0 +1,7 @@
+node_modules/
+test-results/
+playwright-report/
+package-lock.json
+*.log
+.DS_Store
+.gitignore
