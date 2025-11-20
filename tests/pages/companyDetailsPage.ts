@@ -37,13 +37,7 @@ export class CompanyDetailsPage {
     await this.continueBtn.click();
   }
 
-  async fillAndContinue(data: {
-    companyName: string;
-    primaryContact: string;
-    email: string;
-    brandName: string;
-    productCategory: string;
-  }) {
+  async fillAndContinue(data: {companyName: string; primaryContact: string; email: string; brandName: string; productCategory: string;}) {
     await this.companyName.fill(data.companyName);
     await this.primaryContact.fill(data.primaryContact);
     await this.email.fill(data.email);
