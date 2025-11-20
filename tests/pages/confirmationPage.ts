@@ -18,8 +18,7 @@ export class ConfirmationPage {
 
   async verifySummaryContains(data: { company: string; email: string }) {
     await expect(this.page.locator(`text=${data.company}`)).toBeVisible();
-   // await expect(this.page.locator(`text=${data.email}`)).toBeVisible({ timeout: 50000 });
-   const emailLocator = this.page.getByLabel('5Confirm').getByText(data.email);
+    const emailLocator = this.page.getByLabel('5Confirm').getByText(data.email);
     await expect(emailLocator).toBeVisible({ timeout: 50000 });
 
   }

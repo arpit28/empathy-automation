@@ -15,7 +15,7 @@ export class VerifyPage {
     this.verifyBtn = page.getByTestId('verify-next-button');
     this.backBtn   = page.getByTestId('verify-back-button');
 
-    // Angular Material mat-error for missing/invalid input
+    //error ids on the page
     this.error     = page.locator('mat-error');
   }
 
