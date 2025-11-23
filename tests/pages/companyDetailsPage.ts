@@ -29,8 +29,6 @@ export class CompanyDetailsPage {
 
   async goto() {
     await this.page.goto('https://empathy-client-site.pages.dev/register');
-    // Remove pause later
-    // await this.page.pause();
   }
 
   async submitEmpty() {

@@ -5,7 +5,6 @@ import { goodData } from './fixtures/testData';
 test.describe('Company Details Page - Field Validations', () => {
 
   test.beforeEach(async ({ page }) => {
-    // Navigate to company details page before each test
     const company = new CompanyDetailsPage(page);
     await company.goto();
   });
@@ -14,7 +13,6 @@ test.describe('Company Details Page - Field Validations', () => {
     const company = new CompanyDetailsPage(page);
 
     await company.submitEmpty();
-    // Expect all required errors (5 in your happy path)
     await expect(company.requiredErrors).toHaveCount(5);
   });
 
@@ -24,7 +22,7 @@ test.describe('Company Details Page - Field Validations', () => {
     await company.fillAndContinue({
       companyName: goodData.company,
       primaryContact: goodData.contact,
-      email: 'invalid-email', // deliberately invalid
+      email: 'invalid-email',
       brandName: goodData.brand,
       productCategory: goodData.Product
     });

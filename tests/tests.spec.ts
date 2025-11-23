@@ -7,7 +7,7 @@ import { OptionsPage } from './pages/optionsPage';
 import { ConfirmationPage } from './pages/confirmationPage';
 import { goodData } from './fixtures/testData';
 
-test('E2E client registration happy path + validations', async ({ page }) => {
+test('E2E client registration happy path', async ({ page }) => {
 
   // --- PAGE 1: COMPANY DETAILS ---
   const company = new CompanyDetailsPage(page);
@@ -36,9 +36,6 @@ test('E2E client registration happy path + validations', async ({ page }) => {
   // --- PAGE 3: OBJECTIVE PAGE ---
   const obj = new ObjectivePage(page);
 
-  //await obj.submitEmpty();
-  //await expect(obj.error).toHaveCount(4);
-
   await obj.fillAndContinue({
     ireland: true,
     brand: goodData.noOfBrands,
@@ -47,16 +44,11 @@ test('E2E client registration happy path + validations', async ({ page }) => {
     txt3: goodData.txt3
   });
 
-  //await page.pause();
   // --- PAGE 4: OPTIONS PAGE ---
   const opt = new OptionsPage(page);
 
   // Increase each add-on once
   await opt.increaseDashboard();
-  // await opt.increaseDebrief();
-  // await opt.increasePowerpoint();
-  // await opt.increaseWorkshop();
-
   await opt.verifyTotalVisible();
   const totalText = await opt.total.textContent();
 
